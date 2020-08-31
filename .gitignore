@@ -1,0 +1,4 @@
+__pycache__/*
+.workspace-config.json
+.ipynb_checkpoints/
+*.txt
