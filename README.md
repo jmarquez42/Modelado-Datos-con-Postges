@@ -26,12 +26,12 @@ The project is developed by 5 files.
 
 1. Execute the following command to create the database structure.
 
-` python create_tables.py; echo $?`
+> ` python create_tables.py; echo $?`
 
 ***If the program ends with 0 it was executed correctly.***
 
 2. Execute the following command to perform the ingestion.
 
-`python create_tables.py; echo $?`
+> `python etl.py; echo $?`
 
 ***If the program ends with 0 it was executed correctly.***
