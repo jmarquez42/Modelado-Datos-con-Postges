@@ -18,7 +18,11 @@ It is to create a star schema for the application called Sparkify. This model is
 
 ## Project structure
 
-The project is developed by 5 files.
+Project files:
+
+* ***data***: Directory containing the files for the ETL.
+
+* ***sql_queries.py***: Contains SQL statements for creating tables, dropping tables, inserting data, and selecting data.
 
 * ***sql_queries.py***: Contains SQL statements for creating tables, dropping tables, inserting data, and selecting data.
 
@@ -29,6 +33,8 @@ The project is developed by 5 files.
 * ***etl.ipynb***: It is the file that allows to build the process interactively.
 
 * ***test.ipynb***: This file contains test queries to validate ingestion performed with the etl.ipynb file
+
+* ***README.md***: This file contains the description of the project.
 
 ### Prerequisites
 * Python    3.6.3
