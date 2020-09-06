@@ -4,7 +4,7 @@
 
 It is to create a star schema for the application called Sparkify. This model is created from the data set of the songs. And with the user activity records we build the fact table.
 
-### Data set.
+### Data.
 
 ***Song datasets***: This set contains the musics and artists. A sample of this files is:
 ```
@@ -16,7 +16,7 @@ It is to create a star schema for the application called Sparkify. This model is
 {"artist":"Sydney Youngblood","auth":"Logged In","firstName":"Jacob","gender":"M","itemInSession":53,"lastName":"Klein","length":238.07955,"level":"paid","location":"Tampa-St. Petersburg-Clearwater, FL","method":"PUT","page":"NextSong","registration":1540558108796.0,"sessionId":954,"song":"Ain't No Sunshine","status":200,"ts":1543449657796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.78.2 (KHTML, like Gecko) Version\/7.0.6 Safari\/537.78.2\"","userId":"73"}
 ```
 
-### ETL pipeline
+## Project structure
 
 The project is developed by 5 files.
 
