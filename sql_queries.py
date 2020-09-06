@@ -12,14 +12,14 @@ songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays 
     ( 
         songplay_id SERIAL PRIMARY KEY
-        ,start_time BIGINT
-        ,user_id INT
-        ,level VARCHAR
-        ,song_id VARCHAR
-        ,artist_id VARCHAR
-        ,session_id INT
-        ,location VARCHAR
-        ,user_agent VARCHAR
+        ,start_time BIGINT NOT NULL
+        ,user_id INT NULL
+        ,level VARCHAR(255) NOT NULL
+        ,song_id VARCHAR(255) NULL
+        ,artist_id VARCHAR(255) NULL
+        ,session_id INT NOT NULL
+        ,location VARCHAR(255)
+        ,user_agent VARCHAR(255)
     );
 
 """)
@@ -28,10 +28,10 @@ user_table_create = ("""
     CREATE TABLE IF NOT EXISTS users 
     ( 
          user_id INT PRIMARY KEY
-        ,first_name VARCHAR
-        ,last_name VARCHAR
-        ,gender VARCHAR
-        ,level VARCHAR
+        ,first_name VARCHAR(255) NOT NULL
+        ,last_name VARCHAR(255) NOT NULL
+        ,gender VARCHAR(255) NOT NULL
+        ,level VARCHAR(255) NOT NULL
     );
 
 """)
@@ -39,22 +39,22 @@ user_table_create = ("""
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs 
     ( 
-         song_id VARCHAR PRIMARY KEY
-        ,title VARCHAR
-        ,artist_id VARCHAR
-        ,year INT
-        ,duration numeric
+         song_id VARCHAR(255) PRIMARY KEY
+        ,title VARCHAR(255) NOT NULL
+        ,artist_id VARCHAR(255) NOT NULL
+        ,year INT NOT NULL
+        ,duration NUMERIC NOT NULL
     );
 """)
 
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists 
     ( 
-         artist_id VARCHAR PRIMARY KEY
-        ,name VARCHAR
-        ,location VARCHAR
-        ,latitude numeric
-        ,longitude numeric
+         artist_id VARCHAR(255) PRIMARY KEY
+        ,name VARCHAR(255) NOT NULL
+        ,location VARCHAR(255) NULL
+        ,latitude NUMERIC NULL
+        ,longitude NUMERIC NULL
     );
     
 """)
@@ -63,12 +63,12 @@ time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time 
     ( 
          start_time BIGINT PRIMARY KEY
-        ,hour INT
-        ,day INT
-        ,week INT
-        ,month INT
-        ,year INT
-        ,weekday INT
+        ,hour INT NOT NULL
+        ,day INT NOT NULL
+        ,week INT NOT NULL
+        ,month INT NOT NULL
+        ,year INT NOT NULL
+        ,weekday INT NOT NULL
     );
 """)
 
@@ -81,7 +81,7 @@ songplay_table_insert = ("""
 
 user_table_insert = ("""
     INSERT INTO users (user_id,first_name,last_name,gender,level) VALUES (%s,%s,%s,%s,%s) 
-    ON CONFLICT (user_id) DO NOTHING
+    ON CONFLICT (user_id) DO UPDATE set level = EXCLUDED.level
 """)
 
 song_table_insert = ("""
